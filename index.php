@@ -98,14 +98,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             if (isset($_POST['guiemail']) && $_POST['guiemail']) {
                 $email = $_POST['email'];
 
-                $checkemail = checkemail($email);
+                // $checkemail = checkemail($email);
+                // cách 1: hiển thị mật khẩu ra
+                // if (is_array($checkemail)) {
+                //     $thongbao = "Mật khẩu của bạn là : " . $checkemail['pass'];
+                // } else {
+                //     $thongbao = "Email này không tồn tại ";
+                // }
 
 
-                if (is_array($checkemail)) {
-                    $thongbao = "Mật khẩu của bạn là : " . $checkemail['pass'];
-                } else {
-                    $thongbao = "Email này không tồn tại ";
-                }
+                 // cách 2: Gửi thông báo về email
+                 $sendMailMess = sendMail($email);
+                 
             }
 
            include_once "view/taikhoan/quenmk.php";

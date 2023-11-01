@@ -10,12 +10,20 @@
                     </div>
 
                     <input type="submit" value="Gửi" name="guiemail">
-                    <input type=" reset" value="Nhập lại">
+                    <input type="reset" value="Nhập lại">
                 </form>
                 <h2 class="thongbao">
                     <?php
-                    if (isset($thongbao) && ($thongbao != "")) {
-                        echo $thongbao;
+
+                    // Cách 1 : hiển thị mật khẩu luôn
+                    // if (isset($thongbao) && ($thongbao != "")) {
+                    //     echo $thongbao;
+                    // }
+
+
+                    // Cách 2 : gửi email
+                    if (isset($sendMailMess) && $sendMailMess != '') {
+                        echo $sendMailMess;
                     }
                     ?>
                 </h2>
